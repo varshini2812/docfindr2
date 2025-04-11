@@ -1,0 +1,104 @@
+Project Name: DocuFindr (AI-Powered Document Search & Summarization)
+Core Features:
+
+    Multi-format Document Upload (PDF, DOCX, TXT, PPTX).
+
+    NLP-Powered Semantic Search (finds documents even with nearby-meaning keywords).
+
+    AI Summarization (condenses documents into key points).
+
+    Simple User Profile (no auth, just mock username display).
+
+UI/UX Requirements
+1. Main Page Layout
+
+    Header:
+
+        App Name: "DocuFindr" (bold, modern typography).
+
+        User Profile (top-right):
+
+            Placeholder: "Guest User" + generic avatar icon (no login logic).
+
+2. Sidebar Navigation
+
+    📁 Upload Doc – Button to upload files (drag-and-drop or file picker).
+
+    🔍 Search Doc – NLP-powered search interface.
+
+    📝 Summarize Doc – Summarization panel.
+
+3. Functional Screens
+
+A. Document Upload Screen
+
+    Supports: PDF, DOCX, TXT, PPTX.
+
+    Displays uploaded files in a list with metadata (filename, date, size).
+
+    Error handling for unsupported formats.
+
+B. NLP Search Screen
+
+    Search bar with:
+
+        Semantic Search Toggle (default: ON) – Uses NLP to match:
+
+            Synonyms (e.g., "car" → "vehicle").
+
+            Related concepts (e.g., "climate" → "weather").
+
+        Filters (date, file type).
+
+    Results ranked by relevance score (highlighting matched keywords).
+
+C. Summarization Screen
+
+    File upload zone + dropdown to select from previously uploaded docs.
+
+    Output: Bullet-point summary + key themes (mock OpenAI-style output).
+
+Technical Requirements
+Frontend
+
+    Framework: React.js (with hooks for state management).
+
+    UI Library: Material-UI or TailwindCSS.
+
+    File Handling: Use react-dropzone for uploads.
+
+Mock NLP Search Logic (if no backend yet):
+
+    Pretend-search using:
+
+        A keyword expansion list (e.g., "happy" → ["joyful", "content"]).
+
+        Mock "relevance" scores based on term frequency.
+
+Future-Proofing
+
+    Assume Firebase Integration Later:
+
+        Firestore for document metadata.
+
+        Firebase Storage for file uploads.
+
+        Cloud Functions for NLP/Summarization (e.g., calling OpenAI API).
+
+Example User Flow
+
+    User uploads a PDF (report.pdf).
+
+    Searches for "financial growth" → Also returns docs with:
+
+        "Revenue increase" (synonym).
+
+        "Economic expansion" (related concept).
+
+    Clicks "Summarize" on a doc → Gets a 3-sentence AI summary.
+
+Styling Notes
+
+    Themes: Professional (blues/darks with clean whitespace).
+
+    Micro-interactions: Loading spinners during uploads/searches.
